@@ -15,107 +15,46 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
+import os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+class Messages():
+      START_MSG = "**Haloo 👋 [{}](tg://user?id={})!**\n\n🤖 Saya adalah bot yang dapat memutar musik dalam obrolan suara Grup Telegram.\n\n✅ Send me /help for more info."
+      HELP_MSG = [
+        ".",
+f"""
+**Haloo selamat datang di Ilo-Music✨
+⚪️ Ilo-Music dapat memutar musik di obrolan suara grup anda.
+⚪️ [Ilo-Music Assistant](https://t.me/asistenilomusic)\n\nClick next for instructions**
+""",
 
+f"""
+**Setting up**
+1) Jadikan bot sebagai admin
+2) Mulai obrolan suara
+3) Cobalah /play [nama lagu] untuk pertama kalinya dari admin
+*) Jika userbot bergabung, nikmati musiknya! dan jika tidak, maka tambahkan [Ilo-Music Assistant](https://t.me/asistenilomusic) di grup anda dan coba lagi.
+**Commands**
+**=>> Memutar Musik 🎧**
+- /play: Putar musik menggunakan musik dari youtube
+- /play [yt url] : Putar menggunakan yt url
+- /play [reply yo audio]: Play replied audio
+- /dplay: Play song via deezer
+- /splay: Play song via jio saavn
+**=>> Playback ⏯**
+- /player: Buka pengaturan menu dari Assistant
+- /skip: Skips the current track
+- /pause: Pause track
+- /resume: Resumes the paused track
+- /end: Stops media playback
+- /current: Shows the current Playing track
+- /playlist: Shows playlist
+""",
 
-@Client.on_message(
-    filters.command("start")
-    & filters.private
-    & ~ filters.edited
-)
-async def start_(client: Client, message: Message):
-    await message.reply_text(
-        f"""<b> Haloo {message.from_user.first_name} \n
-Saya adalah bot yang dapat memutar musik dalam obrolan suara Grup Telegram.
-
-✣ Silahkan tekan tombol "📜 Cara Menggunakan BOT 📜" untuk melihat cara penggunaan hingga info terbaru tentang Bot Music ini.
-
-✣ Tambahkan [Assistant IAM Music](https://t.me/botmusikiam) ke grup Anda untuk memutar musik di obrolan suara grup Anda.
-
-❃ Managed By [Iam](https://t.me/iamnibng)
-</b>""",
-
-# Edit Yang Perlu Lu ganti 
-# Tapi Jangan di Hapus Thanks To nya Yaaa :D
-
-        reply_markup=InlineKeyboardMarkup(
-            [ 
-                [
-                    InlineKeyboardButton(
-                        "📜 Cara Menggunakan BOT 📜", url="https://t.me/infoiam/3")
-                  ],[
-                    InlineKeyboardButton(
-                        "🌿 Owner", url="https://t.me/iamnibng"
-                    ),
-                    InlineKeyboardButton(
-                        "📷 Instagram", url="https://instagram.com/ilhambumulo_"
-                    )
-                ]
-            ]
-        ),
-     disable_web_page_preview=False
-    )
-
-@Client.on_message(
-    filters.command("start")
-    & filters.group
-    & ~ filters.edited
-)
-async def start(client: Client, message: Message):
-    await message.reply_text(
-        "💁🏻‍♂️ **Apakah Anda ingin mencari Link YouTube?**",
-        reply_markup=InlineKeyboardMarkup(
-            [   
-                [    
-                    InlineKeyboardButton(
-                        "✅ Ya", switch_inline_query_current_chat=""
-                    ),
-                    InlineKeyboardButton(
-                        "❌ Tidak ", callback_data="close"
-                    )
-                ]
-            ]
-        )
-    )
-
-@Client.on_message(
-    filters.command("help")
-    & filters.group
-    & ~ filters.edited
-)
-async def help(client: Client, message: Message):
-    await message.reply_text(
-        """**Klik Tombol dibawah untuk Melihat Cara Menggunakan Bot**""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "📜 Cara Menggunakan BOT 📜", url="https://t.me/infoiam/3"
-                    )
-                ]
-            ]
-        ),
-    )  
-
-
-@Client.on_message(
-    filters.command("reload")
-    & filters.group
-    & ~ filters.edited
-)
-async def reload(client: Client, message: Message):
-    await message.reply_text("""✅ Bot **berhasil dimulai ulang!**\n\n• **Daftar admin** telah **diperbarui**""",
-      reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "Group Saya", url="https://t.me/titiktemufams"
-                    ),
-                    InlineKeyboardButton(
-                        "🌿 Owner", url="https://t.me/iamnibng"
-                    )
-                ]
-            ]
-        )
-   )
+f"""
+**=>> More tools 🧑‍🔧**
+- /admincache: Updates admin info of your group. Try if bot isn't recognize admin
+- /userbotjoin: Undang [Ilo-Music Assistant](https://t.me/asistenilomusic) Userbot ke grup chat anda
+*Player cmd and all other cmds except /play, /current  and /playlist  are only for admins of the group.
+"""
+      ]
