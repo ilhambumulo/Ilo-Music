@@ -2,8 +2,6 @@ import logging
 from GeezProject.modules.msg import Messages as tr
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from GeezProject.config import SOURCE_CODE,ASSISTANT_NAME,PROJECT_NAME,SUPPORT_GROUP,UPDATES_CHANNEL,BOT_USERNAME
-logging.basicConfig(level=logging.INFO)
 
 @Client.on_message(filters.private & filters.incoming & filters.command(['start']))
 def _start(client, message):
@@ -11,33 +9,32 @@ def _start(client, message):
         text=tr.START_MSG.format(message.from_user.first_name, message.from_user.id),
         parse_mode="markdown",
         reply_markup=InlineKeyboardMarkup(
-            [
+            [ 
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group 🙋‍♀️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-                [
+                        "📜 Cara Menggunakan BOT 📜", url="https://t.me/infoiam/3")
+                  ],[
                     InlineKeyboardButton(
-                        "📲 Updates", url=f"https://t.me/{UPDATES_CHANNEL}"), 
+                        "🌿 Owner", url="https://t.me/iamnibng"
+                    ),
                     InlineKeyboardButton(
-                        "💬 Support", url=f"https://t.me/{SUPPORT_GROUP}")
-                ],[
-                    InlineKeyboardButton(
-                        "🛠 Source Code 🛠", url=f"https://{SOURCE_CODE}")
+                        "📷 Instagram", url="https://instagram.com/ilhambumulo_"
+                    )
                 ]
             ]
         ),
-        reply_to_message_id=message.message_id
-        )
+     disable_web_page_preview=False
+    )
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
     await message.reply_text(
-        f"""**🔴 {PROJECT_NAME} is online**""",
+        f"""**🔴 Ilo-Music is online**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "💬 Support Chat", url=f"https://t.me/{SUPPORT_GROUP}"
+                        "💬 Group Chat", url=f"https://t.me/titiktemufams"
                     )
                 ]
             ]
@@ -75,12 +72,12 @@ def map(pos):
             [InlineKeyboardButton(text = '▶️Next', callback_data = "help+2")]
         ]
     elif(pos==len(tr.HELP_MSG)-1):
-        url = f"https://t.me/{SUPPORT_GROUP}"
+        url = f"https://t.me/infoiam"
         button = [
-            [InlineKeyboardButton("➕ Add me to your Group", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-            [InlineKeyboardButton(text = '📲 Updates', url=f"https://t.me/{UPDATES_CHANNEL}"),
-             InlineKeyboardButton(text = '💬 Support', url=f"https://t.me/{SUPPORT_GROUP}")],
-            [InlineKeyboardButton(text = '🛠 Source Code 🛠', url=f"https://{SOURCE_CODE}")],
+            [InlineKeyboardButton("➕ Add me to your Group", url=f"https://t.me/ilomusicbot?startgroup=true")],
+            [InlineKeyboardButton(text = '📲 Updates', url=f"https://t.me/infoiam"),
+             InlineKeyboardButton(text = '💬 Group Chat', url=f"https://t.me/titiktemufams")],
+            [InlineKeyboardButton(text = '🌿 Owner', url=f"http://t.me/iamnibng")],
             [InlineKeyboardButton(text = '◀️Undo', callback_data = f"help+{pos-1}")]
         ]
     else:
@@ -95,12 +92,12 @@ def map(pos):
 @Client.on_message(filters.command("help") & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
     await message.reply_text(
-        f"""**🙋‍♀️ Hello there! I can play music in the voice chats of telegram groups.**""",
+        f"""**🙋‍♀️ Haloo! Saya bisa memutar musik di Obrolan Suara Grup anda.**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "⚙️ Click here for help", url=f"https://t.me/{BOT_USERNAME}?start"
+                        "⚙️ Klik disini untuk bantuan", url=f"https://t.me/ilomusicbot?start"
                     )
                 ]
             ]
