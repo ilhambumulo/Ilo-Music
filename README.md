@@ -1,10 +1,10 @@
-<h1 align="centre">🎶 Geez-MusicProject</h1>
+<h1 align="centre">🎶 Ilo-Music</h1>
 
 ### A bot that can play music on Telegram Group and Channel Voice Chats
 #### POWERED BY [PYTGCALLS](https://github.com/pytgcalls/pytgcalls)
 
 <p align="center">
-  <img src="https://telegra.ph/file/5faef2abd77096b49f12c.jpg">
+  <img src="http://telegra.ph/file/db5fbcf8a4eb9dc4fef34.png">
 </p>
 
 <h2> Whats new 🔥 </h2>
@@ -23,14 +23,14 @@
 
 ### Deploy To Heroku
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vckyou/Geez-MusicProject)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ilhambumulo/Ilo-Music)
 
 get pyrogram string session or [repl](https://replit.com/@Vckyou/Geez-String-Session#main.py) Choose P Don't T
 
 ### ⚔ Self-hosting (For Devs) 
 ```sh
 # Install Git First (apt-instll git)
-$ git clone https://github.com/Vckyou/Geez-MusicProject
+$ git clone https://github.com/ilhambumulo/Ilo-Music
 $ cd Geez-MusicProject
 # Upgrade sources
 # Install All Requirements 
