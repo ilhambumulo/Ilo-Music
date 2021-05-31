@@ -92,7 +92,7 @@ def map(pos):
 @Client.on_message(filters.command("help") & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
     await message.reply_text(
-        f"""**🙋‍♀️ Haloo! Saya bisa memutar musik di Obrolan Suara Grup anda.**""",
+        f"""Hai selamat datang✨\n\n Bot Music adalah Bot yang dirancang khusus untuk memutar music secara simple dan mudah.\n Silahkan tambahkan saya dan assistant saya ke grup anda.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
