@@ -29,45 +29,48 @@ async def start_(client: Client, message: Message):
      disable_web_page_preview=False
     )
 
-@Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
-async def gstart(_, message: Message):
+@Client.on_message(
+    filters.command("start")
+    & filters.group
+    & ~ filters.edited
+)
+async def start(client: Client, message: Message):
     await message.reply_text(
-        f"""**🔴 Ilo-Music sedang online**""",
+        "💁🏻‍♂️ **Apakah Anda ingin mencari Link YouTube?**",
+        reply_markup=InlineKeyboardMarkup(
+            [   
+                [    
+                    InlineKeyboardButton(
+                        "✅ Ya", switch_inline_query_current_chat=""
+                    ),
+                    InlineKeyboardButton(
+                        "❌ Tidak ", callback_data="close"
+                    )
+                ]
+            ]
+        )
+    )
+
+
+
+@Client.on_message(
+    filters.command("help")
+    & filters.group
+    & ~ filters.edited
+)
+async def help(client: Client, message: Message):
+    await message.reply_text(
+        """**Klik Tombol dibawah untuk Melihat Cara Menggunakan Bot**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "💬 Grup Chat", url=f"https://t.me/titiktemufams"
+                        "📜 Cara Menggunakan BOT 📜", url="https://t.me/infoiam/3"
                     )
                 ]
             ]
         ),
-    )
-
-
-@Client.on_message(filters.private & filters.incoming & filters.command(['help']))
-def _help(client, message):
-    client.send_message(chat_id = message.chat.id,
-        text = help,
-        parse_mode="markdown",
-        disable_web_page_preview=True,
-        disable_notification=True,
-        reply_markup = InlineKeyboardMarkup(map(1)),
-        reply_to_message_id = message.message_id
-    )
-
-help_callback_filter = filters.create(lambda _, __, query: query.data.startswith('help+'))
-
-@Client.on_callback_query(help_callback_filter)
-def help_answer(client, callback_query):
-    chat_id = callback_query.from_user.id
-    disable_web_page_preview=True
-    message_id = callback_query.message.message_id
-    msg = int(callback_query.data.split('+')[1])
-    client.edit_message_text(chat_id=chat_id,    message_id=message_id,
-        text=help[msg],    reply_markup=InlineKeyboardMarkup(map(msg))
-    )
-
+    )  
 
 def map(pos):
     if(pos==1):
@@ -91,6 +94,27 @@ def map(pos):
             ],
         ]
     return button
+
+@Client.on_message(
+    filters.command("reload")
+    & filters.group
+    & ~ filters.edited
+)
+async def reload(client: Client, message: Message):
+    await message.reply_text("""✅ Bot **berhasil dimulai ulang!**\n\n• **Daftar admin** telah **diperbarui**""",
+      reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "Group Saya", url="https://t.me/titiktemufams"
+                    ),
+                    InlineKeyboardButton(
+                        "🌿 Owner", url="https://t.me/iamnibng"
+                    )
+                ]
+            ]
+        )
+   )
 
 @Client.on_message(filters.command("help") & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
