@@ -48,7 +48,7 @@ async def gstart(_, message: Message):
 @Client.on_message(filters.private & filters.incoming & filters.command(['help']))
 def _help(client, message):
     client.send_message(chat_id = message.chat.id,
-        text = tr.HELP_MSG[1],
+        text = help,
         parse_mode="markdown",
         disable_web_page_preview=True,
         disable_notification=True,
@@ -65,7 +65,7 @@ def help_answer(client, callback_query):
     message_id = callback_query.message.message_id
     msg = int(callback_query.data.split('+')[1])
     client.edit_message_text(chat_id=chat_id,    message_id=message_id,
-        text=tr.HELP_MSG[msg],    reply_markup=InlineKeyboardMarkup(map(msg))
+        text=help[msg],    reply_markup=InlineKeyboardMarkup(map(msg))
     )
 
 
@@ -74,7 +74,7 @@ def map(pos):
         button = [
             [InlineKeyboardButton(text = '▶️Next', callback_data = "help+2")]
         ]
-    elif(pos==len(tr.HELP_MSG)-1):
+    elif(pos==len(help)-1):
         url = f"https://t.me/infoiam"
         button = [
             [InlineKeyboardButton("➕ Add me to your Group", url=f"https://t.me/ilomusicbot?startgroup=true")],
