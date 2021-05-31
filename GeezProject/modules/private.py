@@ -28,12 +28,12 @@ def _start(client, message):
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
     await message.reply_text(
-        f"""**🔴 Ilo-Music is online**""",
+        f"""**🔴 Ilo-Music sedang online**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "💬 Group Chat", url=f"https://t.me/titiktemufams"
+                        "💬 Grup Chat", url=f"https://t.me/titiktemufams"
                     )
                 ]
             ]
@@ -74,7 +74,7 @@ def map(pos):
         url = f"https://t.me/infoiam"
         button = [
             [InlineKeyboardButton("➕ Add me to your Group", url=f"https://t.me/ilomusicbot?startgroup=true")],
-            [InlineKeyboardButton(text = '📲 Updates', url=f"https://t.me/infoiam"),
+            [InlineKeyboardButton(text = '📣 Official Channel', url=f"https://t.me/infoiam"),
              InlineKeyboardButton(text = '💬 Group Chat', url=f"https://t.me/titiktemufams")],
             [InlineKeyboardButton(text = '🌿 Owner', url=f"http://t.me/iamnibng")],
             [InlineKeyboardButton(text = '◀️Undo', callback_data = f"help+{pos-1}")]
