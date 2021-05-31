@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b> Halo {message.from_user.first_name}, saya adalah 𝐈𝐥𝐨-𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭 !\n\n Saya adalah Bot Music yang dirancang khusus untuk menemani anda memutar musik dalam grup melalui obrolan suara.\n\n Silahkan anda tekan [disini](https://t.me/infoiam) untuk melihat cara penggunaan hingga info terbaru tentang Bot Music ini.\n\ Masukkan saya dengan [assistant](https://t.me/asistenilomusic) saya kedalam grup anda lalu jadikan admin, dan dengarkan musik sepuasnya!
+        f"""<b>Halo, saya adalah 𝐈𝐥𝐨-𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭 !\n\nSaya adalah Bot Music yang dirancang khusus untuk menemani anda memutar musik dalam grup melalui obrolan suara.\n\n Silahkan anda tekan [disini](https://t.me/infoiam) untuk melihat cara penggunaan hingga info terbaru tentang Bot Music ini.\n\nMasukkan saya dengan [assistant](https://t.me/asistenilomusic) saya kedalam grup anda lalu jadikan admin, dan dengarkan musik sepuasnya!
 </b>""",
         reply_markup=InlineKeyboardMarkup(
             [ 
