@@ -38,7 +38,7 @@ $ pip(3) install -r requirements.txt
 # Rename example.env to local.env and fill
 $ npm i -g npm
 # Start Bot 
-$ python(3) -m Geez-MusicProject
+$ python(3) -m Ilo-Music
 ```
 
 ### Commands for Group 🛠
