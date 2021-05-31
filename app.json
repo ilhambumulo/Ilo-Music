@@ -2,66 +2,48 @@
   "name": "Ilo-Music",
   "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
   "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/ilhambumulo/Ilo-Music",
+  "repository": "https://github.com/ilhambumulo/Ilo-Music
   "stack": "container",
   "env": {
     "SESSION_NAME": {
-      "description": "Gunakan String Pyrogram Jangan Telethon",
+      "description": "Masukan String Session Pyrogram untuk assistant yang naik ke VCG",
       "required": true
     },
     "BOT_TOKEN": {
-      "description": "Ambil Token Bot Di @BotFather",
-      "required": true
-    },
-    "BOT_USERNAME": {
-      "description": "Masukan Username BOT Anda Dan Jangan Gunakan @",
+      "description": "Masukan Bot Token dari @BotFather",
       "required": true
     },
     "BOT_NAME": {
-      "description": "Nama Bot MusicPlayer Anda.",
+      "description": "Masukan Nama Bot MusicPlayer Mu. (isi bebas)",
       "required": false,
       "value": ""
     },
-    "SUPPORT_GROUP": {
-      "description": "Grup dukungan MusicPlayer Anda tanpa @ [Skip Aja Kalo Lu Gapunya]",
+    "ARQ_API_KEY": {
+      "description": "Ambil api dari bot telegram » t.me/ARQRobot atau @ARQRobot",
       "required": false,
-      "value": "titiktemufams"
-    },
-    "PROJECT_NAME": {
-      "description": "Nama proyek MusicPlayer Anda..",
-      "required": false,
-      "value": "Ilo Music"
-    },
-    "ASSISTANT_NAME": {
-      "description": "Isi Nama pengguna asisten MusicPlayer Anda tanpa @.",
-      "required": true
+      "value": ""
     },    
     "BG_IMAGE": {
-      "description": "BG image of bot (Use transparent one) [IGNORE].",
+      "description": "Custom Background Play Musik Gunakan Foto yang Transparant format .png",
       "required": false,
-      "value": "http://telegra.ph/file/a35eb11109716dde26ecb.png"
-    },     
-    "UPDATES_CHANNEL": {
-      "description": "Untuk Melihat Update an Di Channel @ [Skipp Aja Kalo Lu Gapunya].",
-      "required": false,
-      "value": "infoiam"
-    },    
+      "value": "http://telegra.ph/file/67149a88b212d65a24267.png"
+    },       
     "API_ID": {
-      "description": "App ID from my.telegram.org/apps",
+      "description": "Masukan APP ID Silahkan Ambil dari my.telegram.org/apps",
       "required": true
     },
     "API_HASH": {
-      "description": "App hash from my.telegram.org/apps",
+      "description": "Masukan API HASH Silahkan Ambil dari my.telegram.org/apps",
       "required": true
     },
     "SUDO_USERS": {
-      "description": "Daftar ID pengguna dihitung sebagai admin di mana-mana (dipisahkan oleh spasi).",
+      "description": "Daftar User ID pengguna dihitung sebagai admin di semua tempat (pemisah menggunakan space).",
       "required": true
     },
     "DURATION_LIMIT": {
       "description": "Batas durasi audio maksimal untuk download (minutes).",
       "required": true,
-      "value": "15"
+      "value": "30"
     }
   }
 }
