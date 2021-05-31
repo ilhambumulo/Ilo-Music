@@ -8,6 +8,6 @@ from GeezProject.services.callsmusic.callsmusic import client as USER
 async def pmPermit(client: USER, message: Message):
     await USER.send_message(
         message.chat.id,
-        "Hi there, This is a music assistant service .\n\n ❗️ Rules:\n   - No chatting allowed\n   - No spam allowed \n\n 👉 **SEND GROUP INVITE LINK OR USERNAME IF USERBOT CAN'T JOIN YOUR GROUP.**\n\n ⚠️ Disclamer: If you are sending a message here it means admin will see your message and join chat\n    - Don't add this user to secret groups.\n   - Don't Share private info here\n\n",
+        "Halo, Saya adalah Layanan Asisten Musik yang siap menemani anda memutar musik didalam obrolan suara.\n\n ◈ Silahkan pergi ke channel @infoiam untuk melihat info terbaru tentang musik bot ini, atau bisa hubungi ke @iamnibng jika terjadi masalah pada bot music.\n\n ❗️ Attention:\n ◈  Jangan spam chat kesini, karna akan mengakibatkan akun anda teblokir oleh asisten!\n\n 📣 JIKA ASSISTANT TIDAK BISA DIUNDANG, SILAHKAN KETIK /userbotjoin DIDALAM GRUP ANDA.\n\n 📣 Channel Support : @infoiam\n 🌿 Owner : @iamnibng",
     )
     return
