@@ -1,8 +1,8 @@
 {
-  "name": "Geez-MusicProject",
+  "name": "Ilo-Music",
   "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
   "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/Vckyou/Geez-MusicProject",
+  "repository": "https://github.com/ilhambumulo/Ilo-Music",
   "stack": "container",
   "env": {
     "SESSION_NAME": {
@@ -25,12 +25,12 @@
     "SUPPORT_GROUP": {
       "description": "Grup dukungan MusicPlayer Anda tanpa @ [Skip Aja Kalo Lu Gapunya]",
       "required": false,
-      "value": "VcgSupportGroup"
+      "value": "titiktemufams"
     },
     "PROJECT_NAME": {
       "description": "Nama proyek MusicPlayer Anda..",
       "required": false,
-      "value": "Geez Music Project"
+      "value": "Ilo-Music"
     },
     "ASSISTANT_NAME": {
       "description": "Isi Nama pengguna asisten MusicPlayer Anda tanpa @.",
@@ -39,12 +39,12 @@
     "BG_IMAGE": {
       "description": "BG image of bot (Use transparent one) [IGNORE].",
       "required": false,
-      "value": "https://telegra.ph/file/ad54dc991d9e41dbbe37d.png"
+      "value": "http://telegra.ph/file/67149a88b212d65a24267.png"
     },     
     "UPDATES_CHANNEL": {
       "description": "Untuk Melihat Update an Di Channel @ [Skipp Aja Kalo Lu Gapunya].",
       "required": false,
-      "value": "Vckyouuu"
+      "value": "infoiam"
     },    
     "API_ID": {
       "description": "App ID from my.telegram.org/apps",
