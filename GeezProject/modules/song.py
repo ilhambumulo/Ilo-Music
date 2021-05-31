@@ -51,7 +51,7 @@ def song(client, message):
         m.edit("❌ Lagu Tidak ditemukan.\n\nCoba Masukan Judul lagu yang lebih jelas.")
         print(str(e))
         return
-    m.edit("Downloading the song ")
+    m.edit("**Sedang Mendownload Lagu**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
