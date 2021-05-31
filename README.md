@@ -38,7 +38,7 @@ $ pip(3) install -r requirements.txt
 # Rename example.env to local.env and fill
 $ npm i -g npm
 # Start Bot 
-$ python(3) -m Ilo-Music
+$ python(3) -m Geez-MusicProject
 ```
 
 ### Commands for Group 🛠
@@ -72,8 +72,8 @@ $ python(3) -m Ilo-Music
 #### Special Credits
 - [Rojserbest](http://github.com/rojserbes): Callsmusic Developer
 
-This bot is based on the original work done by [Rojserbest](http://github.com/rojserbest). Without his hardwork GeezMusic won't exist. 
-Geez-MusicProject is a modified version of [Callsmusic](https://github.com/callsmusic/callsmusic) for fit the needs of @GeezManageBot users
+This bot is based on the original work done by [Rojserbest](http://github.com/rojserbest). Without his hardwork Ilo-Music won't exist. 
+Ilo-Music is a modified version of [Callsmusic](https://github.com/callsmusic/callsmusic) for fit the needs of @iamnibng users
 
 #### Contribtors
 - [InukaASiTH](https://github.com/InukaAsith): Dev
