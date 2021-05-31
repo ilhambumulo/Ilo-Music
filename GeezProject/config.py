@@ -1,3 +1,20 @@
+# DAISYXMUSIC- Telegram bot project
+# Copyright (C) 2021  Roj Serbest
+# Copyright (C) 2021  Inuka Asith
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# Modified by Inukaasith
+
 import os
 from os import getenv
 
@@ -10,7 +27,7 @@ que = {}
 SESSION_NAME = getenv("SESSION_NAME", "session")
 BOT_TOKEN = getenv("BOT_TOKEN")
 BOT_NAME = getenv("BOT_NAME")
-UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "@infoiam")
+UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "@Lunatic0de")
 BG_IMAGE = getenv("BG_IMAGE", "https://telegra.ph/file/dcfdf612e499eef0e0b1f.png")
 admins = {}
 API_ID = int(getenv("API_ID"))
