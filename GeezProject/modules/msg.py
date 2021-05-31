@@ -1,52 +1,121 @@
-import os
+# Daisyxmusic (Telegram bot project )
+# Copyright (C) 2021  Inukaasith
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-class Messages():
-      START_MSG = "**Hello 👋 [{}](tg://user?id={})!**\n\n🤖 Saya adalah bot yang dapat memutar musik dalam obrolan suara Grup Telegram.\n\n✅ Ketik /help untuk info lainnya."
-      HELP_MSG = [
-        ".",
-f"""
-**Hai 👋 Selamat datang di Ilo-Music
 
-⚪️ Ilo-Music dapat memutar music di obrolan suara grup anda.
 
-⚪️ [Ilo-Music Assistant](https://t.me/asistenilomusic)\n\nKlik next untuk instruksinya**
-""",
+@Client.on_message(
+    filters.command("start")
+    & filters.private
+    & ~ filters.edited
+)
+async def start_(client: Client, message: Message):
+    await message.reply_text(
+        f"""<b> Haloo {message.from_user.first_name} \n
+Saya adalah bot yang dapat memutar musik dalam obrolan suara Grup Telegram.
 
-f"""
-**Setting up**
+✣ Silahkan tekan tombol "📜 Cara Menggunakan BOT 📜" untuk melihat cara penggunaan hingga info terbaru tentang Bot Music ini.
 
-1) Jadikan bot sebagai admin
-2) Mulai obrolan suara
-3) Ketik /play [judul lagu] untuk pertama kalinya dari admin
-*) Jika userbot bergabung, nikmati musiknya! dan jika tidak, tambahkan [Ilo-Music Assistant](https://t.me/asistenilomusic) di grup anda dan coba lagi.
-**Commands**
+✣ Tambahkan [Assistant IAM Music](https://t.me/botmusikiam) ke grup Anda untuk memutar musik di obrolan suara grup Anda.
 
-**=>> Memutar Musik 🎧**
+❃ Managed By [Iam](https://t.me/iamnibng)
+</b>""",
 
-- /play: Putar musik menggunakan musik dari youtube
-- /play [yt url] : Play the given yt url
-- /play [reply yo audio]: Play replied audio
-- /dplay: Play song via deezer
-- /splay: Play song via jio saavn
+# Edit Yang Perlu Lu ganti 
+# Tapi Jangan di Hapus Thanks To nya Yaaa :D
 
-**=>> Playback ⏯**
+        reply_markup=InlineKeyboardMarkup(
+            [ 
+                [
+                    InlineKeyboardButton(
+                        "📜 Cara Menggunakan BOT 📜", url="https://t.me/infoiam/3")
+                  ],[
+                    InlineKeyboardButton(
+                        "🌿 Owner", url="https://t.me/iamnibng"
+                    ),
+                    InlineKeyboardButton(
+                        "📷 Instagram", url="https://instagram.com/ilhambumulo_"
+                    )
+                ]
+            ]
+        ),
+     disable_web_page_preview=False
+    )
 
-- /player: Open Settings menu of player
-- /skip: Skips the current track
-- /pause: Pause track
-- /resume: Resumes the paused track
-- /end: Stops media playback
-- /current: Shows the current Playing track
-- /playlist: Shows playlist
-""",
+@Client.on_message(
+    filters.command("start")
+    & filters.group
+    & ~ filters.edited
+)
+async def start(client: Client, message: Message):
+    await message.reply_text(
+        "💁🏻‍♂️ **Apakah Anda ingin mencari Link YouTube?**",
+        reply_markup=InlineKeyboardMarkup(
+            [   
+                [    
+                    InlineKeyboardButton(
+                        "✅ Ya", switch_inline_query_current_chat=""
+                    ),
+                    InlineKeyboardButton(
+                        "❌ Tidak ", callback_data="close"
+                    )
+                ]
+            ]
+        )
+    )
 
-f"""
-**=>> More tools 🧑‍🔧**
+@Client.on_message(
+    filters.command("help")
+    & filters.group
+    & ~ filters.edited
+)
+async def help(client: Client, message: Message):
+    await message.reply_text(
+        """**Klik Tombol dibawah untuk Melihat Cara Menggunakan Bot**""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "📜 Cara Menggunakan BOT 📜", url="https://t.me/infoiam/3"
+                    )
+                ]
+            ]
+        ),
+    )  
 
-- /admincache: Updates admin info of your group. Try if bot isn't recognize admin
-- /userbotjoin: Invite [Ilo-Music Assistant](https://t.me/asistenilomusic) Userbot to your chat
 
-*Player cmd and all other cmds except /play, /current  and /playlist  are only for admins of the group.
-"""
-      ]
+@Client.on_message(
+    filters.command("reload")
+    & filters.group
+    & ~ filters.edited
+)
+async def reload(client: Client, message: Message):
+    await message.reply_text("""✅ Bot **berhasil dimulai ulang!**\n\n• **Daftar admin** telah **diperbarui**""",
+      reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "Group Saya", url="https://t.me/titiktemufams"
+                    ),
+                    InlineKeyboardButton(
+                        "🌿 Owner", url="https://t.me/iamnibng"
+                    )
+                ]
+            ]
+        )
+   )
