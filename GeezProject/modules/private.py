@@ -51,9 +51,6 @@ async def start(client: Client, message: Message):
                 [    
                     InlineKeyboardButton(
                         "📣 Channel Support", url=f"https://t.me/infoiam"
-                    ),
-                    InlineKeyboardButton(
-                        "❌ Tidak ", callback_data="close"
                     )
                 ]
             ]
