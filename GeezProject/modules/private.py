@@ -15,7 +15,7 @@ Saya adalah Bot Music yang dirancang khusus untuk menemani anda memutar musik da
 
 Silahkan anda tekan [disini](https://t.me/infoiam) untuk melihat cara penggunaan hingga info terbaru tentang Bot Music ini.
 
-Masukkan saya dengan [assistant] (https://t.me/asistenilomusic) saya kedalam grup anda lalu jadikan admin, dan dengarkan musik sepuasnya!
+Masukkan saya dengan [assistant](https://t.me/asistenilomusic) saya kedalam grup anda lalu jadikan admin, dan dengarkan musik sepuasnya!
         """,
         reply_markup=InlineKeyboardMarkup(
             [
