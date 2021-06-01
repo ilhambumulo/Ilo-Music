@@ -9,13 +9,19 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>Halo, saya adalah 𝐈𝐥𝐨-𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭 !\n\nSaya adalah Bot Music yang dirancang khusus untuk menemani anda memutar musik dalam grup melalui obrolan suara.\n\n Silahkan anda tekan [disini](https://t.me/infoiam) untuk melihat cara penggunaan hingga info terbaru tentang Bot Music ini.\n\nMasukkan saya dengan [assistant](https://t.me/asistenilomusic) saya kedalam grup anda lalu jadikan admin, dan dengarkan musik sepuasnya!
-</b>""",
+        f"""**Halo, saya adalah Ilo-Music Bot !
+
+Saya adalah Bot Music yang dirancang khusus untuk menemani anda memutar musik dalam grup melalui obrolan suara.
+
+Silahkan anda tekan [disini](https://t.me/infoiam) untuk melihat cara penggunaan hingga info terbaru tentang Bot Music ini.
+
+Masukkan saya dengan [assistant] (https://t.me/asistenilomusic) saya kedalam grup anda lalu jadikan admin, dan dengarkan musik sepuasnya!
+        """,
         reply_markup=InlineKeyboardMarkup(
-            [ 
+            [
                 [
                     InlineKeyboardButton(
-                        "📜 Cara Menggunakan BOT 📜", url="https://t.me/infoiam/3")
+                        "📣 Channel Support", url="https://t.me/infoiam")
                   ],[
                     InlineKeyboardButton(
                         "🌿 Owner", url="https://t.me/iamnibng"
@@ -23,10 +29,13 @@ async def start_(client: Client, message: Message):
                     InlineKeyboardButton(
                         "📷 Instagram", url="https://instagram.com/ilhambumulo_"
                     )
-                ]
+                ],[ 
+                    InlineKeyboardButton(
+                        "➕ Add To Your Group ➕", url="https://t.me/ilomusicbot?startgroup=true"
+                    )]
             ]
         ),
-     disable_web_page_preview=False
+     disable_web_page_preview=True
     )
 
 @Client.on_message(
@@ -36,12 +45,12 @@ async def start_(client: Client, message: Message):
 )
 async def start(client: Client, message: Message):
     await message.reply_text(
-        "💁🏻‍♂️ **Apakah Anda ingin mencari Link YouTube?**",
+        "**Ilo-Music sedang aktif**",
         reply_markup=InlineKeyboardMarkup(
             [   
                 [    
                     InlineKeyboardButton(
-                        "✅ Ya", switch_inline_query_current_chat=""
+                        "📣 Channel Support", url=f"https://t.me/infoiam"
                     ),
                     InlineKeyboardButton(
                         "❌ Tidak ", callback_data="close"
