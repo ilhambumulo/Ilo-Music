@@ -47,20 +47,18 @@ async def start(client: Client, message: Message):
     await message.reply_text(
         "**Ilo-Music sedang aktif**",
         reply_markup=InlineKeyboardMarkup(
-            [   
-                [    
-                    InlineKeyboardButton(
-                        "📣 Channel Support", url=f"https://t.me/infoiam"
-                
-                ],
+            [
                 [
                     InlineKeyboardButton(
-                        "🌿 Owner", url=f"http://t.me/iamnibng"
+                        "📣 Channel Support", url="https://t.me/infoiam")
+                  ],[
+                    InlineKeyboardButton(
+                        "🌿 Owner", url="https://t.me/iamnibng"
+                    )
                 ]
             ]
-        )
+        ),
     )
-
 
 
 @Client.on_message(
