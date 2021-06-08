@@ -4,7 +4,7 @@
 #### POWERED BY [PYTGCALLS](https://github.com/pytgcalls/pytgcalls)
 
 <p align="center">
-  <img src="http://telegra.ph/file/db5fbcf8a4eb9dc4fef34.png">
+  <img src="">
 </p>
 
 <h2> Whats new 🔥 </h2>
