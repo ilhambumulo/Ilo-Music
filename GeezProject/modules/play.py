@@ -960,11 +960,9 @@ async def deezer(client: Client, message_: Message):
         chat_id=message_.chat.id,
         reply_markup=keyboard,
         photo="final.png",
-        caption=f"🏷 **Judul:** [{title[:60]}]({url})\n⏱ **Durasi:** {duration}\n💡 **Status:** Sedang Memutar\n**Diputar via Deezer**\n" \
-                    + f"🎼 **Request Dari:** {message.from_user.mention}",
-                   reply_markup=keyboard,)
-        os.remove("final.png")
-        return await lel.delete()
+        caption=f"🎼️ **Sedang Memutar Lagu** [{title}]({url}) **Via Deezer**",
+    )
+    os.remove("final.png")
     
     
 @Client.on_callback_query(filters.regex(pattern=r"plll"))
