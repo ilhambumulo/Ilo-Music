@@ -591,7 +591,7 @@ async def play(_, message: Message):
             return
             # Returning to pornhub
         except:
-            await lel.edit("🎵 **Sedang Memproses Lagu**")
+            await lel.edit("**Tidak ada hasil yang cukup untuk dipilih.. Mulai bermain langsung..**")
                         
             # print(results)
             try:
